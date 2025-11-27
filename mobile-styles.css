@@ -1,0 +1,435 @@
+/* mobile-styles.css - استایل‌های واکنش‌گرا برای دستگاه‌های موبایل و تبلت */
+
+/* استایل‌های کلی واکنش‌گرا */
+@media (max-width: 992px) {
+    .dashboard-container {
+        padding: 1rem 0;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .dashboard-actions {
+        justify-content: center;
+        margin-top: 1rem;
+    }
+    
+    .time-display {
+        text-align: center;
+        margin: 0 auto 1rem;
+    }
+    
+    .user-info {
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.2rem;
+    }
+    
+    .card-header h2 {
+        font-size: 1.4rem;
+    }
+    
+    .table th, .table td {
+        padding: 0.5rem;
+    }
+    
+    /* بهینه‌سازی ستون‌های جدول */
+    .table-responsive {
+        overflow-x: auto;
+    }
+}
+
+/* استایل‌های موبایل */
+@media (max-width: 768px) {
+    .row {
+        margin-right: -0.5rem;
+        margin-left: -0.5rem;
+    }
+    
+    .col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, 
+    .col-sm, .col-md, .col-lg, .col-xl {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+    
+    /* استایل‌های اطلاعیه‌ها */
+    .announcement-title {
+        font-size: 0.9rem;
+    }
+    
+    .announcement-content {
+        min-height: auto;
+    }
+    
+    .announcement-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .announcement-footer .btn {
+        align-self: flex-end;
+        margin-top: 0.5rem;
+    }
+    
+    /* بهینه‌سازی فرم‌ها */
+    .form-label {
+        font-size: 0.9rem;
+    }
+    
+    .form-control, .form-select {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
+    }
+    
+    /* مدیریت جدول‌ها */
+    .table-mobile-stack th, 
+    .table-mobile-stack td {
+        display: block;
+        width: 100%;
+        text-align: right;
+    }
+    
+    .table-mobile-stack th {
+        background-color: #f8f9fa;
+        border-bottom: 0;
+    }
+    
+    .table-mobile-stack td {
+        border-top: 0;
+        padding-top: 0.25rem;
+        padding-bottom: 0.75rem;
+    }
+    
+    .table-mobile-stack td:before {
+        content: attr(data-label);
+        float: right;
+        font-weight: bold;
+        margin-left: 0.5rem;
+    }
+    
+    /* بهینه‌سازی دکمه‌ها */
+    .d-flex.justify-content-end {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .d-flex.justify-content-end .btn {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        flex: 1 1 auto;
+        min-width: 48%;
+    }
+    
+    /* منوی همبرگری برای موبایل */
+    .mobile-menu-toggle {
+        display: flex;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 1050;
+        width: 40px;
+        height: 40px;
+        background: #3498db;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        right: -280px;
+        width: 280px;
+        height: 100%;
+        background: white;
+        z-index: 1040;
+        padding: 1rem;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease;
+        overflow-y: auto;
+    }
+    
+    .mobile-menu.show {
+        right: 0;
+    }
+    
+    .mobile-menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1030;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease;
+    }
+    
+    .mobile-menu-overlay.show {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .mobile-menu-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .mobile-menu-header h5 {
+        margin: 0;
+        font-size: 1.1rem;
+    }
+    
+    .mobile-menu-close {
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        line-height: 1;
+        color: #6c757d;
+    }
+    
+    .mobile-menu-items {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .mobile-menu-items li {
+        margin-bottom: 0.5rem;
+    }
+    
+    .mobile-menu-items a {
+        display: flex;
+        align-items: center;
+        padding: 0.75rem 1rem;
+        color: #343a40;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background 0.2s ease;
+    }
+    
+    .mobile-menu-items a:hover {
+        background: #f8f9fa;
+    }
+    
+    .mobile-menu-items a i {
+        margin-left: 0.75rem;
+        color: #3498db;
+        width: 20px;
+        text-align: center;
+    }
+    
+    /* دکمه بازگشت به بالا برای موبایل */
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+/* استایل‌های موبایل‌های کوچک */
+@media (max-width: 576px) {
+    body {
+        padding: 0.5rem;
+    }
+    
+    .container {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+    
+    .card {
+        border-radius: 10px;
+    }
+    
+    .card-header {
+        padding: 0.75rem 1rem;
+    }
+    
+    .card-body {
+        padding: 0.75rem;
+    }
+    
+    /* تک ستونی کردن گرید */
+    .row {
+        margin-right: -0.25rem;
+        margin-left: -0.25rem;
+    }
+    
+    .col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, 
+    .col-sm, .col-md, .col-lg, .col-xl {
+        padding-right: 0.25rem;
+        padding-left: 0.25rem;
+    }
+    
+    /* دکمه‌های موبایل (تمام عرض) */
+    .d-flex.justify-content-end .btn {
+        flex: 1 1 100%;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* تنظیم اندازه فونت‌ها */
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.3rem;
+    }
+    
+    h4 {
+        font-size: 1.1rem;
+    }
+    
+    h5 {
+        font-size: 1rem;
+    }
+    
+    /* کاهش پدینگ در لیست‌ها */
+    .list-group-item {
+        padding: 0.5rem 0.75rem;
+    }
+}
+
+/* کلاس‌های کمکی واکنش‌گرا */
+.d-sm-none {
+    display: none !important;
+}
+
+.d-md-none {
+    display: none !important;
+}
+
+.d-lg-none {
+    display: none !important;
+}
+
+.d-sm-flex {
+    display: flex !important;
+}
+
+.d-md-flex {
+    display: flex !important;
+}
+
+.d-lg-flex {
+    display: flex !important;
+}
+
+@media (min-width: 576px) {
+    .d-sm-none {
+        display: initial !important;
+    }
+    
+    .d-sm-flex {
+        display: flex !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .d-md-none {
+        display: initial !important;
+    }
+    
+    .d-md-flex {
+        display: flex !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .d-lg-none {
+        display: initial !important;
+    }
+    
+    .d-lg-flex {
+        display: flex !important;
+    }
+}
+
+/* استایل‌های مدال برای صفحات موبایل */
+@media (max-width: 576px) {
+    .modal-dialog {
+        margin: 0.5rem;
+        max-width: none;
+    }
+    
+    .modal-content {
+        border-radius: 10px;
+    }
+    
+    .modal-header {
+        padding: 0.75rem 1rem;
+    }
+    
+    .modal-body {
+        padding: 0.75rem;
+    }
+    
+    .modal-footer {
+        padding: 0.75rem 1rem;
+    }
+}
+
+/* استایل‌های برای چاپ */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    
+    .card {
+        box-shadow: none !important;
+        border: 1px solid #ddd;
+    }
+    
+    .container {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    body {
+        background: white;
+    }
+}
+/* اضافه کردن در فایل mobile-styles.css */
+@media (max-width: 768px) {
+    .d-none-mobile {
+        display: none !important;
+    }
+    
+    /* کم عرض کردن ستون شماره پایانه */
+    .terminal-number-column {
+        width: 90px;
+    }
+    
+    /* استایل برای دکمه‌های عملیات در موبایل */
+    .action-buttons-mobile {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+    }
+    
+    .action-buttons-mobile .btn {
+        padding: 5px 8px;
+        font-size: 12px;
+    }
+    
+    /* نمایش آیکون به جای متن در دکمه‌ها */
+    .action-buttons-mobile .btn span {
+        display: none;
+    }
+    
+    .action-buttons-mobile .btn i {
+        margin: 0;
+    }
+}

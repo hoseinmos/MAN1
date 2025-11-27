@@ -1,0 +1,1007 @@
+/* styles.css - بهبود یافته با انیمیشن و طراحی بهتر */
+body {
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    font-family: 'Vazirmatn', 'Tahoma', 'Arial', sans-serif;
+    transition: background 1s ease;
+}
+
+body.dashboard-page {
+    display: block;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background: linear-gradient(135deg, #c2e9fb, #a1c4fd);
+}
+
+/* استایل‌های مشترک */
+.card {
+    border-radius: 15px;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin-bottom: 1.5rem;
+}
+
+.card-hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2) !important;
+}
+
+.card-header {
+    padding: 1.5rem;
+    color: white;
+    border-bottom: none;
+}
+
+.card-header h5 {
+    margin-bottom: 0;
+    font-weight: 600;
+}
+
+/* استایل‌های صفحه ورود */
+.login-container {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 450px;
+    animation: fadeIn 1s ease;
+}
+
+@media (max-width: 576px) {
+    .login-container {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.login-container .card {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.login-container .card-header {
+    background: linear-gradient(135deg, #1a73e8, #6c5ce7);
+    text-align: center;
+    padding: 2rem 1.5rem;
+}
+
+.login-container .card-header h3 {
+    margin-bottom: 0;
+    font-weight: 700;
+}
+
+.login-container .card-body {
+    padding: 2rem;
+}
+
+.captcha-container {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.captcha-box {
+    background: linear-gradient(45deg, #f5f5f5, #e0e0e0);
+    border-radius: 8px;
+    padding: 15px 20px;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    color: #333;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    user-select: none;
+    text-align: center;
+    width: 150px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.captcha-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 5px,
+        rgba(0,0,0,0.03) 5px,
+        rgba(0,0,0,0.03) 10px
+    );
+}
+
+/* استایل دکمه‌ها */
+.btn-primary {
+    background: linear-gradient(135deg, #1a73e8, #6c5ce7);
+    border: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    padding: 0.6rem 1.5rem;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background: linear-gradient(135deg, #1558c4, #5a4bcb);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(106, 113, 245, 0.4);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #e53935, #d81b60);
+    border: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-danger:hover, .btn-danger:focus {
+    background: linear-gradient(135deg, #c62828, #ad1457);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(229, 57, 53, 0.4);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #43a047, #00897b);
+    border: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover, .btn-success:focus {
+    background: linear-gradient(135deg, #388e3c, #00796b);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(67, 160, 71, 0.4);
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, #ff9800, #ff5722);
+    border: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.btn-warning:hover, .btn-warning:focus {
+    background: linear-gradient(135deg, #f57c00, #e64a19);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 152, 0, 0.4);
+    color: white;
+}
+
+.btn-info {
+    background: linear-gradient(135deg, #039be5, #00acc1);
+    border: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.btn-info:hover, .btn-info:focus {
+    background: linear-gradient(135deg, #0288d1, #0097a7);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(3, 155, 229, 0.4);
+    color: white;
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #757575, #616161);
+    border: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover, .btn-secondary:focus {
+    background: linear-gradient(135deg, #616161, #424242);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(117, 117, 117, 0.4);
+}
+
+.logout-btn {
+    background: linear-gradient(135deg, #e53935, #d81b60);
+    color: white;
+    border: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover, .logout-btn:focus {
+    background: linear-gradient(135deg, #c62828, #ad1457);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(229, 57, 53, 0.4);
+    color: white;
+}
+
+/* استایل‌های فرم‌ها */
+.form-control, .form-select {
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #1a73e8;
+    box-shadow: 0 0 0 0.25rem rgba(26, 115, 232, 0.25);
+}
+
+.form-label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.was-validated .form-control:invalid {
+    border-color: #e53935;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23e53935'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23e53935' stroke='none'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.was-validated .form-control:valid {
+    border-color: #43a047;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2343a047' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.invalid-feedback {
+    color: #e53935;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+/* استایل‌های داشبورد */
+.dashboard-container {
+    padding: 2rem 0;
+    width: 100%;
+}
+
+.welcome-card {
+    background: white;
+    margin-bottom: 2rem;
+}
+
+.welcome-card .card-header {
+    background: linear-gradient(135deg, #43a047, #00897b);
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome-card .card-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 40%, transparent 50%);
+    pointer-events: none;
+}
+
+.welcome-animation {
+    animation: fadeInUp 1s ease;
+}
+
+.time-display {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #444;
+    font-weight: 500;
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.user-info {
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    border-right: 4px solid #43a047;
+}
+
+.user-info h4 {
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.user-info p {
+    margin-bottom: 0;
+}
+
+.dashboard-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+/* انیمیشن‌ها */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* استایل‌های بخش جستجو و نتایج */
+.search-section, .stats-section {
+    animation: fadeIn 1s ease;
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    font-weight: 600;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    right: 0;
+    width: 50px;
+    height: 2px;
+    background-color: #1a73e8;
+}
+
+/* استایل کارت‌های آمار */
+.stat-card {
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.stat-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 40%, transparent 50%);
+    pointer-events: none;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    margin-right: 1.5rem;
+    opacity: 0.9;
+}
+
+.stat-info h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+.stat-info h2 {
+    font-size: 2.5rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+/* استایل جدول نتایج */
+.table {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    width: 100%;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.table thead th {
+    background-color: #f8f9fa;
+    color: #333;
+    font-weight: 600;
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+    padding: 1rem;
+}
+
+.table tbody td {
+    padding: 1rem;
+    vertical-align: middle;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(0,0,0,0.03);
+}
+
+/* استایل انیمیشن سطرها */
+.animated-row {
+    animation: fadeInRight 0.5s ease forwards;
+    opacity: 0;
+}
+
+/* استایل نتایج جستجو */
+.search-results-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.search-results-table {
+    animation: fadeIn 0.5s ease;
+}
+
+.terminal-number {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+
+.status-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* استایل مودال‌ها */
+.modal-content {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #1a73e8, #6c5ce7);
+    color: white;
+    border-radius: 15px 15px 0 0 !important;
+    border-bottom: none;
+    padding: 1.5rem;
+}
+
+.modal-header .btn-close {
+    color: white;
+    background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+    opacity: 0.75;
+}
+
+.modal-header .btn-close:hover, .modal-header .btn-close:focus {
+    opacity: 1;
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.modal-footer {
+    border-top: 1px solid rgba(0,0,0,0.05);
+    padding: 1.5rem;
+}
+
+/* استایل اطلاعات پایانه در مودال */
+.terminal-details-container {
+    animation: fadeIn 0.3s ease;
+}
+
+/* استایل‌های وضعیت و اولویت */
+.status-badge, .priority-badge {
+    padding: 0.5rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: inline-block;
+}
+
+/* استایل فیلتر فرم */
+.filter-form {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+/* استایل هشدارها */
+.alert {
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.alert::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 5px;
+}
+
+.alert-success::after {
+    background-color: #43a047;
+}
+
+.alert-warning::after {
+    background-color: #ff9800;
+}
+
+.alert-danger::after {
+    background-color: #e53935;
+}
+
+.alert-info::after {
+    background-color: #039be5;
+}
+
+.alert-floating {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100px);
+    z-index: 1050;
+    min-width: 300px;
+    max-width: 100%;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease-out;
+}
+
+.show-alert {
+    transform: translateX(-50%) translateY(0);
+}
+
+/* استایل انیمیشن برای ظاهر شدن فیلدها */
+.fade-in {
+    animation: fadeIn 0.3s ease;
+}
+
+/* استایل‌های واکنش‌گرایی */
+@media (max-width: 768px) {
+    .welcome-message {
+        font-size: 1.2rem;
+    }
+    
+    .time-display {
+        font-size: 1rem;
+    }
+    
+    .dashboard-actions {
+        justify-content: center;
+        margin-top: 1rem;
+    }
+    
+    .stat-card {
+        padding: 1rem;
+    }
+    
+    .stat-icon {
+        font-size: 2rem;
+        margin-right: 1rem;
+    }
+    
+    .stat-info h2 {
+        font-size: 1.8rem;
+    }
+    
+    body {
+        display: block;
+        padding: 1rem 0;
+    }
+    
+    .table-responsive {
+        font-size: 0.9rem;
+    }
+    
+    .card-body {
+        padding: 1.25rem;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .modal-body {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .stat-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem 1rem;
+    }
+    
+    .stat-icon {
+        margin-right: 0;
+        margin-bottom: 1rem;
+        font-size: 2.5rem;
+    }
+    
+    .modal-dialog {
+        margin: 0.5rem;
+    }
+    
+    .modal-body {
+        padding: 1rem;
+    }
+    
+    .terminal-details-container .row {
+        flex-direction: column;
+    }
+    
+    .alert-floating {
+        width: 90%;
+        left: 5%;
+        transform: translateX(0) translateY(-100px);
+    }
+    
+    .show-alert {
+        transform: translateX(0) translateY(0);
+    }
+}
+
+/* استایل‌های اضافی برای بهبود تجربه کاربری */
+.search-result-row, .roll-history-row, .issue-history-row {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.animated-row {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* استایل ورودی‌ها با فوکوس */
+.form-control:focus, .form-select:focus {
+    border-color: #1a73e8;
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.25);
+}
+
+/* استایل دکمه بازگشت به بالا */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #1a73e8;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: #1558c4;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(26, 115, 232, 0.4);
+}
+
+/* استایل اسکینر */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
+}
+
+/* بهبود استایل جدول‌ها */
+.table-responsive {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(26, 115, 232, 0.05);
+}
+
+/* استایل badge های بهبود یافته */
+.badge {
+    padding: 0.5em 0.8em;
+    font-weight: 500;
+    border-radius: 30px;
+    letter-spacing: 0.5px;
+    font-size: 0.75rem;
+}
+
+.badge.rounded-pill {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+/* استایل ورودی تعداد */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* حالت بارگذاری */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.loading-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.spinner-container {
+    text-align: center;
+}
+
+.spinner-container p {
+    margin-top: 1rem;
+    color: #333;
+    font-weight: 500;
+}
+
+/* استایل توضیحات رول و مشکل */
+.description-cell {
+    max-width: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.description-cell:hover {
+    white-space: normal;
+    max-width: none;
+    background-color: rgba(0, 0, 0, 0.02);
+    border-radius: 5px;
+    padding: 0.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 10;
+}
+
+/* استایل ابزارک مدیریت مشکلات و رول‌ها */
+.dashboard-widget {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.dashboard-widget-header {
+    padding: 1.25rem;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dashboard-widget-body {
+    padding: 1.25rem;
+}
+
+.dashboard-widget-footer {
+    padding: 1rem 1.25rem;
+    background-color: #f8f9fa;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.dashboard-widget:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* استایل تاریخچه مشکلات */
+.issue-timeline {
+    position: relative;
+    margin-left: 1rem;
+    padding-left: 2rem;
+    list-style: none;
+}
+
+.issue-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 2px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.issue-timeline-item {
+    position: relative;
+    padding-bottom: 1.5rem;
+}
+
+.issue-timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -2rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: #1a73e8;
+    border: 2px solid white;
+    box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.3);
+}
+
+.issue-timeline-item-content {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.issue-timeline-item-time {
+    color: #666;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+/* افکت به‌روزرسانی badge */
+.badge-updated {
+    animation: badge-pulse 2s ease;
+}
+
+@keyframes badge-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); background-color: #28a745; }
+    100% { transform: scale(1); }
+}
+/* استایل‌های مربوط به بخش جدول مدارک و توضیحات */
+.bg-light-peach {
+    background-color: #ffebe6;
+    transition: background-color 0.3s ease;
+}
+
+.bg-light-peach:hover {
+    background-color: #ffdcd4;
+}
+
+.bg-light-green {
+    background-color: #e6ffe6;
+    transition: background-color 0.3s ease;
+}
+
+.bg-light-green:hover {
+    background-color: #d4ffd4;
+}
+
+.table-bordered td {
+    padding: 12px 15px;
+    vertical-align: middle;
+}
+
+.text-end {
+    text-align: right !important;
+}
+
+/* بهبود نمایش جدول‌ها در حالت موبایل */
+@media (max-width: 576px) {
+    .table-bordered td {
+        padding: 8px 10px;
+    }
+    
+    .table-bordered td.text-end {
+        min-width: 100px;
+    }
+}
+/* آیکون‌های دایره‌ای */
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    color: white;
+    font-size: 24px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.icon-circle:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.bg-primary.icon-circle {
+    background: linear-gradient(135deg, #0d6efd, #0a58ca);
+}
+
+.bg-warning.icon-circle {
+    background: linear-gradient(135deg, #ffc107, #fd7e14);
+}
+
+.bg-danger.icon-circle {
+    background: linear-gradient(135deg, #dc3545, #c71f2d);
+}
+
+.bg-success.icon-circle {
+    background: linear-gradient(135deg, #198754, #147a48);
+}

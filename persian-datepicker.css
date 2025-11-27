@@ -1,0 +1,82 @@
+/* persian-datepicker.css - استایل‌های تقویم شمسی */
+
+/* استایل فیلد تاریخ */
+.datepicker-input {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 8px 12px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.datepicker-input:focus {
+    border-color: #1a73e8;
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.25);
+}
+
+/* استایل‌های تقویم */
+.datepicker-plot-area {
+    font-family: 'Vazirmatn', 'Tahoma', 'Arial', sans-serif !important;
+}
+
+.datepicker-plot-area .datepicker-day-view .table-days td.selected span,
+.datepicker-plot-area .datepicker-year-view .year-item.selected,
+.datepicker-plot-area .datepicker-month-view .month-item.selected {
+    background-color: #1a73e8 !important;
+    color: #fff;
+}
+
+.datepicker-plot-area .datepicker-day-view .table-days td span:hover,
+.datepicker-plot-area .datepicker-year-view .year-item:hover,
+.datepicker-plot-area .datepicker-month-view .month-item:hover {
+    background-color: #e8f0fe !important;
+    color: #1a73e8;
+}
+
+/* امکان انتخاب تاریخ با استایل بهتر */
+.datepicker-plot-area .datepicker-day-view .table-days td span {
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 50%;
+}
+
+/* بهبود استایل دکمه‌های تقویم */
+.datepicker-plot-area .datepicker-header .btn-next,
+.datepicker-plot-area .datepicker-header .btn-prev,
+.datepicker-plot-area .datepicker-header .btn-switch {
+    border-radius: 5px;
+    background: #f8f9fa;
+    color: #1a73e8;
+}
+
+.datepicker-plot-area .datepicker-header .btn-next:hover,
+.datepicker-plot-area .datepicker-header .btn-prev:hover,
+.datepicker-plot-area .datepicker-header .btn-switch:hover {
+    background: #e8f0fe;
+}
+
+/* استایل امروز */
+.datepicker-plot-area .datepicker-day-view .table-days td.today span {
+    background-color: #e8f0fe !important;
+    color: #1a73e8;
+    border: 1px solid #1a73e8;
+}
+
+/* استایل دکمه‌های کنترل */
+.datepicker-plot-area .toolbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding-top: 8px;
+}
+
+.datepicker-plot-area .toolbox .btn-today {
+    color: #1a73e8;
+}
+
+.datepicker-plot-area .toolbox .btn-today:hover {
+    color: #1558c4;
+}
